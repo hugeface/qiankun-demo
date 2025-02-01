@@ -1,22 +1,47 @@
 {
-  "name": "cost",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+  "name": "qiankun-demo",
+  "version": "1.0.0",
+  "description": "qiankun demo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugeface/qiankun-demo.git"
   },
-  "dependencies": {
-    "vue": "^3.5.13"
+  "keywords": [
+    "micro frontend",
+    "qiankun",
+    "demo"
+  ],
+  "author": "Hugeface",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugeface/qiankun-demo/issues"
+  },
+  "homepage": "https://github.com/hugeface/qiankun-demo#readme",
+  "scripts": {
+    "projects:install": "npm-run-all --serial install:*",
+    "projects:start": "npm-run-all --parallel start:*",
+    "install:main": "cd projects/main && yarn",
+    "start:main": "cd projects/main && yarn start",
+    "start-main-multiple": "cd projects/main && yarn start:multiple",
+    "install:react16": "cd projects/react16 && yarn",
+    "start:react16": "cd projects/react16 && yarn start",
+    "install:react15": "cd projects/react15 && yarn",
+    "start:react15": "cd projects/react15 && yarn start",
+    "install:vue": "cd projects/vue && yarn",
+    "start:vue": "cd projects/vue && yarn start",
+    "install:angular9": "cd projects/angular9 && yarn",
+    "start:angular9": "cd projects/angular9 && yarn serve:qiankun",
+    "install:purehtml": "cd projects/purehtml && yarn",
+    "start:purehtml": "cd projects/purehtml && yarn start",
+    "install:vue3": "cd projects/vue3 && yarn",
+    "start:vue3": "cd projects/vue3 && yarn start"
   },
   "devDependencies": {
-    "@types/node": "^22.12.0",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/tsconfig": "^0.7.0",
-    "typescript": "~5.6.2",
-    "vite": "^6.0.11",
-    "vue-tsc": "^2.2.0"
+    "npm-run-all": "^4.1.5",
+    "qiankun": "^2.10.16"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
   }
 }
